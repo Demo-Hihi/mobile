@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Women from "../../../../assets/png/ad/women.png";
 
 const screenWidth = Dimensions.get("window").width;
+const screenHeight = Dimensions.get("window").height;
 
 const Ad = () => {
   const carouselRef = useRef(null); // Create a ref to control the carousel
@@ -13,7 +14,7 @@ const Ad = () => {
   const data = [
     {
       id: 1,
-      text: "Slide 1",
+      text: "Exclusive Offer",
       backgroundColor: "#F9D7BD",
     },
     {
@@ -42,7 +43,8 @@ const Ad = () => {
   const renderItem = ({ item }) => (
     <View style={[styles.ad, { backgroundColor: item.backgroundColor }]}>
       <Image source={Women} style={styles.img}></Image>
-      {/* <Text style={styles.text}>{item.text}</Text> */}
+      <Text style={styles.text}>Exclusive</Text>
+      <Text style={styles.text}>Offer</Text>
     </View>
   );
 
@@ -84,18 +86,19 @@ Ad.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
     right: 25,
     position: "absolute",
-    bottom: 400,
     height: 600,
+    top: -140,
+    alignItems: "center",
+    justifyContent: "center",
   },
   img: {
     top: 0,
     bottom: 10,
     height: 220,
-    width: 200,
-    left: 10,
+    width: 190,
+    left: 0,
     position: "absolute",
   },
   ad: {
@@ -106,11 +109,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     left: 21,
+    position: "relative",
   },
   text: {
-    fontSize: 24, // Adjust the font size as needed
+    bottom: 0,
+    fontSize: 30, // Adjust the font size as needed
+    left: 90,
     fontWeight: "bold",
-    color: "#0d986a",
+    color: "#002140",
   },
   paginationContainer: {
     bottom: 0,

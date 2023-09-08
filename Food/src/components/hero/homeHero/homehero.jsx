@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import SvgUri from "react-native-svg-uri";
 import MySvg from "../../../../assets/svg/hero/homeHero.svg";
 import Notification from "../../../components/notifications/global/noti";
+import { screenWidth, screenHeight } from "../../../config/screen";
 
 const HomeHero = () => {
   return (
@@ -23,8 +24,10 @@ const HomeHero = () => {
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
-    top: 50,
-    right: 25,
+    top: 55,
+    alignItems: "center",
+    justifyContent: "center",
+    left: 25,
   },
   row: {
     flexDirection: "row", // Arrange children in a horizontal row
